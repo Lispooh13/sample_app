@@ -24,7 +24,7 @@ end
 
 def edit
   @list=List.find(params[:id])
-end
+endcd
 
 def update
   list=List.find(params[:id])
