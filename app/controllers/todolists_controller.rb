@@ -15,6 +15,8 @@ class TodolistsController < ApplicationController
  end
 
 def index
+  puts "作成したキー#{ENV['SECRET_KEY']}"
+  
   @lists=List.all
 end
 
@@ -24,7 +26,7 @@ end
 
 def edit
   @list=List.find(params[:id])
-endcd
+end
 
 def update
   list=List.find(params[:id])
@@ -39,7 +41,7 @@ def destroy
 end
 
  private
- def list_params
-  params.require(:list).permit(:title,:body,:image)
- end
+  def list_params
+        params.require(:list).permit(:title,:body,:image)
+  end
 end
